@@ -1,0 +1,35 @@
+
+    {{pageTitle + ': ' + company?.companyName}}
+
+
+  <div 
+       *ngIf='company'>
+    
+          <div class='col-md-4'>Name:</div>
+          <div class='col-md-8'>{{company.companyName}}</div>
+      
+      
+          
+        
+          <div class='col-md-4'>Description:</div>
+          <div class='col-md-8'>{{company.description}}</div>
+        
+        
+      
+   
+        <img class='center-block img-responsive'
+             [style.width.px]='200'
+             [style.margin.px]='2'
+             [src]='company.imageUrl'
+             [title]='company.companyName'>
+      </div>
+  
+  
+
+
+    <button 
+            style='width:80px'
+            (click)='onBack()'>
+       Back
+    </button>
+

@@ -1,0 +1,46 @@
+
+  
+    {{pageTitle}}
+
+  
+   
+    
+        <input type='text'
+               [(ngModel)]='listFilter' />
+      
+    
+   
+         
+      
+        <h4 *ngIf='listFilter'>Filtered by: {{listFilter}}</h4>
+
+         
+              
+ 
+           
+           
+        
+    
+          <li *ngFor='let company of filteredCompanies'>
+            
+              <img 
+                   [src]='company.imageUrl'
+                   [title]='company.companyName'
+                   [style.width.px]='imageWidth'
+                   [style.margin.px]='imageMargin'>
+            
+            
+              <a [routerLink]="['/companies', company.companyName]">
+                {{ company.companyName }}
+              </a>
+            
+            
+            
+              
+            </li>
+      
+
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>
